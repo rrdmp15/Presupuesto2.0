@@ -1,0 +1,17 @@
+table .eliminar{
+    display: none;
+}
+table tr:hover .eliminar {
+    display: inline-block;
+  }
+  
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+i {
+    font-size: 1.5rem;
+}
+    
+  
