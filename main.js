@@ -37,6 +37,37 @@ button.addEventListener("click", ()=>{
 
   let presupuesto = calcularPresupuesto();
   document.querySelector("#presupuesto").textContent = presupuesto;
+
+  let ingresosTabla = parseInt(calcularTotal(ingresos))
+  let egresosTabla = parseInt(calcularTotal(egresos))
+
+
+
+let chartDom = document.getElementById('grafica');
+let myChart = echarts.init(chartDom, null, {
+  renderer: 'canvas',
+  useDirtyRect: true
+});
+
+let option;
+
+option = {
+  xAxis: {
+    type: 'category',
+    data: [ 'ingresos','egresos']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [ingresosTabla, egresosTabla],
+      type: 'bar'
+    }
+  ]
+};
+
+myChart.setOption(option);
 })
 
 btnClear.addEventListener("click", function() {
@@ -175,6 +206,10 @@ function loadDataFromLocalStorage() {
   let presupuesto = calcularPresupuesto();
   document.querySelector("#presupuesto").textContent = presupuesto;
 }
+
+
+
+
 
 
 

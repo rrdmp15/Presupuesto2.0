@@ -13,5 +13,10 @@ button {
 i {
     font-size: 1.5rem;
 }
-    
+
+#grafica{
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
   
